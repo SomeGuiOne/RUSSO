@@ -1,0 +1,45 @@
+jsp
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="java.util.List, model.Produto, dao.ProdutoDAO" %>
+<%
+    ProdutoDAO produtoDAO = new ProdutoDAO();
+    List<Produto> produtos = produtoDAO.consultarTodos();
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Produtos</title>
+</head>
+<body>
+    <h2>Consultar Produtos</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (Produto p : produtos) { %>
+                <tr>
+                    <td><%= p.getId() %></td>
+                    <td><%= p.getNome() %></td>
+                    <td><%= p.getQuantidade() %></td>
+                    <td><%= p.getPreco() %></td>
+                    <td>
+                        <form action="ProdutoController" method="post" style="display:inline;">
+                            <input type="hidden" name="action" value="excluir">
+                            <input type="hidden" name="id" value="<%= p.getId() %>">
+                            <button type="submit">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
