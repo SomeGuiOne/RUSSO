@@ -1,0 +1,17 @@
+jsp
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Principal</title>
+</head>
+<body>
+    <h2>Bem-vindo ao Sistema</h2>
+    <ul>
+        <li><a href="produtos.jsp">Cadastrar Produto</a></li>
+        <li><a href="consulta.jsp">Consultar Produto</a></li>
+        <li><a href="updateprod.jsp">Alterar Produto</a></li>
+    </ul>
+</body>
+</html>
