@@ -1,0 +1,24 @@
+jsp
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Produto</title>
+</head>
+<body>
+    <h2>Alterar Produto</h2>
+    <form action="ProdutoController" method="post">
+        <input type="hidden" name="action" value="alterar">
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" required><br>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" name="quantidade" required><br>
+        <label for="preco">Preço:</label>
+        <input type="text" id="preco" name="preco" required><br>
+        <button type="submit">Alterar</button>
+    </form>
+</body>
+</html>
